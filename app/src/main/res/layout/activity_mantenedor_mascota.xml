@@ -35,7 +35,7 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textSize="14sp"
-        android:text="Ingrese Nombre"
+        android:hint="Ingrese Nombre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblNombreMascota" />
@@ -86,7 +86,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Ingrese raza"
+        android:hint="Ingrese raza"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblraza" />
@@ -158,7 +158,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Ingrese Nombre del propietario"
+        android:hint="Ingrese Nombre del propietario"
         app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/txtanionacimiento" />
 
@@ -180,7 +180,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Estado"
+        android:hint="Estado"
         app:layout_constraintStart_toEndOf="@+id/textView9"
         app:layout_constraintTop_toBottomOf="@+id/txtPropietario" />
 

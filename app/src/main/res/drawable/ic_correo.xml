@@ -1,0 +1,17 @@
+<vector android:height="24dp" android:viewportHeight="512"
+    android:viewportWidth="512" android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="#F7BA35" android:pathData="M260.65,29.498h251.35v160.37h-251.35z"/>
+    <path android:fillColor="#FD9702" android:pathData="M386.32,29.498h125.68v160.37h-125.68z"/>
+    <path android:fillColor="#FBDA35" android:pathData="M386.323,59.906l-125.677,129.964l251.354,0z"/>
+    <path android:fillColor="#F7BA35" android:pathData="M386.323,59.906l0,129.964l125.677,0z"/>
+    <path android:fillColor="#FDE888" android:pathData="M260.646,29.498l125.677,106.04l125.677,-106.04z"/>
+    <path android:fillColor="#FBDA35" android:pathData="M386.323,29.498l0,106.04l125.677,-106.04z"/>
+    <path android:fillColor="#A9F0F0" android:pathData="M180.37,302.13m-180.37,0a180.37,180.37 0,1 1,360.74 0a180.37,180.37 0,1 1,-360.74 0"/>
+    <path android:fillColor="#00C2C7" android:pathData="M270.551,302.133c0,-133.377 -90.179,-180.375 -90.179,-180.375v180.375H270.551z"/>
+    <path android:fillColor="#64DDE0" android:pathData="M90.193,302.133H0c0.002,99.611 80.75,180.362 180.359,180.369C179.817,482.218 90.193,435.112 90.193,302.133z"/>
+    <path android:fillColor="#64DDE0" android:pathData="M90.193,302.133h90.179V121.758C180.372,121.758 90.193,168.756 90.193,302.133z"/>
+    <path android:fillColor="#00A5AD" android:pathData="M180.372,121.758c0,0 90.179,46.998 90.179,180.375h90.193c0,-0.001 0,-0.002 0,-0.003C360.744,202.513 279.989,121.758 180.372,121.758z"/>
+    <path android:fillColor="#00C2C7" android:pathData="M180.372,302.133H90.193c0,132.979 89.624,180.085 90.167,180.369c0.004,0 0.008,0 0.013,0V302.133H180.372z"/>
+    <path android:fillColor="#028C8C" android:pathData="M180.385,482.502c99.61,-0.007 180.358,-80.758 180.359,-180.369h-90.193C270.551,435.112 180.927,482.218 180.385,482.502z"/>
+    <path android:fillColor="#00A5AD" android:pathData="M270.551,302.133h-90.179v180.369c0.004,0 0.008,0 0.013,0C180.927,482.218 270.551,435.112 270.551,302.133z"/>
+</vector>
