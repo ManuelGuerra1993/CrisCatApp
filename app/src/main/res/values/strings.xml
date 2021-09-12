@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CrisCatApp</string>
+    <string name="lista_de_mascotas">Lista de Mascotas</string>
+    <string name="raza">Raza:</string>
 </resources>
