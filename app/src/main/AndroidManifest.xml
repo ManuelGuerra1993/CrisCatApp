@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CrisCatApp">
         <activity
+            android:name=".FareActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Home"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
