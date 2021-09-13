@@ -95,7 +95,7 @@ public class RegistrarActivity extends AppCompatActivity {
             txtContrasenia.setError("Ingrese contraseña");
             txtContrasenia.requestFocus();
         }else {
-            mAuth.signInWithEmailAndPassword(correo,contrasenia).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            mAuth.createUserWithEmailAndPassword(correo,contrasenia).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
