@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "541155482463",
+    "firebase_url": "https://criscatapp-456bc-default-rtdb.firebaseio.com",
+    "project_id": "criscatapp-456bc",
+    "storage_bucket": "criscatapp-456bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:541155482463:android:408346f437ce9efba6f4ea",
+        "android_client_info": {
+          "package_name": "com.manu.criscatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "541155482463-o2apk5fsu5t3llpj2frthqm60vqto7vg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.manu.criscatapp",
+            "certificate_hash": "0273b2e637f277222217c7d651f5e5ece61f61b5"
+          }
+        },
+        {
+          "client_id": "541155482463-jqn2sa7cedrddb5adga19cqbf3dm23ul.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0hMPhYncEjcT5GCtWqdu3keid6WkkmQA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "541155482463-jqn2sa7cedrddb5adga19cqbf3dm23ul.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
