@@ -13,6 +13,10 @@
         android:theme="@style/Theme.CrisCatApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ContactActivity"
+            android:label="Sugerencias o Reclamaciones"
+            android:exported="true" />
+        <activity
             android:name=".RegistrarActivity"
             android:exported="true" />
         <activity
