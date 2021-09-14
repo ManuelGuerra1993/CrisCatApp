@@ -3,26 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/drawable/deg_background.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/drawable/ic_apellido.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/drawable/ic_baseline_calendar_today_24.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/drawable/ic_budget.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/drawable/ic_contact_form.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/drawable/ic_launcher_background.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/drawable/ic_pet_house.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/layout/activity_contact.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/layout/activity_empezar.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/layout/activity_fare.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/layout/activity_home.xml" value="0.25" />
-        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/layout/activity_lista_mascota.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/layout/activity_login.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/layout/activity_mantenedor_mascota.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/layout/activity_registrar.xml" value="0.18802083333333333" />
+        <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/layout/activity_empezar.xml" value="0.1" />
+        <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/layout/activity_home.xml" value="0.22" />
+        <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/layout/activity_lista_mascota.xml" value="0.25" />
+        <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/layout/activity_mantenedor_mascota.xml" value="0.25" />
+        <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/layout/activity_registrar.xml" value="0.25" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
