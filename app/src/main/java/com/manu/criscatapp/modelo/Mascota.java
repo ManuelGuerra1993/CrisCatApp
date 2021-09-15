@@ -10,6 +10,17 @@ public class Mascota {
     private String propietario;
     private String estado;
 
+    @Override
+    public String toString() {
+        return "nombre='" + nombre + '\'' +
+                ", especie=" + especie +
+                ", raza='" + raza + '\'' +
+                ", sexo=" + sexo +
+                ", anioNacimiento=" + anioNacimiento +
+                ", propietario='" + propietario + '\'' +
+                ", estado='" + estado + '\'';
+    }
+
     public String getId() {
         return id;
     }

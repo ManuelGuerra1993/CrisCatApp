@@ -17,6 +17,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.manu.criscatapp.modelo.Mascota;
 
+import java.util.HashMap;
 import java.util.UUID;
 
 public class MantenedorMascotaActivity extends AppCompatActivity {
@@ -28,8 +29,10 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
     RadioButton rbCanino, rbFelino, rbMacho, rbHembra;
     Button btnGuardar;
 
-    String nombres, raza, propietario, estado;
+    String nombres, raza, propietario, estado, id;
     int anionacimiento, especie, sexo;
+
+    Boolean registrar = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,28 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mantenedor_mascota);
         inicializarFirebase();
         asignarReferencias();
+        verificarRegistrar();
+    }
+
+    private void verificarRegistrar(){
+        if (getIntent().hasExtra("id")){
+            registrar = false;
+            id = getIntent().getStringExtra("id");
+            txtNombre.setText(getIntent().getStringExtra("nombre"));
+            //rbCanino.setText(getIntent().getStringExtra("especie"));
+            //rbFelino.setText(getIntent().getStringExtra("especie"));
+            String e1 = getIntent().getStringExtra("especie");
+            if (e1.equals("1")){
+                rbCanino.setSelected(true);
+            } else {rbFelino.setSelected(true);}
+
+            txtRaza.setText(getIntent().getStringExtra("raza"));
+            rbMacho.setText(getIntent().getStringExtra("sexo"));
+            rbHembra.setText(getIntent().getStringExtra("sexo"));
+            txtanioNacimiento.setText(getIntent().getStringExtra("anioNacimiento"));
+            txtPropietario.setText(getIntent().getStringExtra("propietario"));
+            txtEstado.setText(getIntent().getStringExtra("estado"));
+        }
     }
 
     private void asignarReferencias(){
@@ -80,18 +105,33 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
         macho = Integer.parseInt(rbMacho.getText().toString());
         hembra = Integer.parseInt(rbHembra.getText().toString());*/
 
-        Mascota mascota = new Mascota();
-        mascota.setId(UUID.randomUUID().toString());
-        mascota.setNombre(nombres);
-        mascota.setRaza(raza);
-        mascota.setPropietario(propietario);
-        mascota.setEstado(estado);
-        mascota.setAnioNacimiento(anionacimiento);
-        mascota.setEspecie(especie);
-        mascota.setSexo(sexo);
+        if (registrar == true) {
+            Mascota mascota = new Mascota();
+            mascota.setId(UUID.randomUUID().toString());
+            mascota.setNombre(nombres);
+            mascota.setRaza(raza);
+            mascota.setPropietario(propietario);
+            mascota.setEstado(estado);
+            mascota.setAnioNacimiento(anionacimiento);
+            mascota.setEspecie(especie);
+            mascota.setSexo(sexo);
+            dbReference.child("Mascota").child(mascota.getId()).setValue(mascota);
+            Toast.makeText(this, "Mascota registrada", Toast.LENGTH_SHORT).show();
+        } else {
+            HashMap map = new HashMap();
+            map.put("nombre",nombres);
+            map.put("especie",especie);
+            map.put("raza",raza);
+            map.put("sexo",sexo);
+            map.put("anioNacimiento", anionacimiento);
+            map.put("propietario",propietario);
+            map.put("estado",estado);
+            dbReference.child("Mascota").child(id).updateChildren(map);
+            Toast.makeText(MantenedorMascotaActivity.this, "Mascota actualizada", Toast.LENGTH_SHORT).show();
 
-        dbReference.child("Mascota").child(mascota.getId()).setValue(mascota);
-        Toast.makeText(this, "Mascota registrada", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MantenedorMascotaActivity.this, ListaMascotaActivity.class);
+            startActivity(intent);
+        }
     }
 
     private void inicializarFirebase(){

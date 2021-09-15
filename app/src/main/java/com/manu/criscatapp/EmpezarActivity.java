@@ -25,7 +25,7 @@ public class EmpezarActivity extends AppCompatActivity {
 
         btnEmpezar.setOnClickListener(view -> {
             mAuth.signOut();
-            startActivity(new Intent(this, ListaMascotaActivity.class));
+            startActivity(new Intent(this, Home.class));
         });
     }
 

@@ -55,6 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:minHeight="48dp"
         android:text="Canino"
         app:layout_constraintStart_toEndOf="@+id/lblEspecie"
         app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota" />
@@ -65,6 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:minHeight="48dp"
         android:text="Felino"
         app:layout_constraintStart_toEndOf="@+id/rbCanino"
         app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota" />
@@ -106,6 +108,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:minHeight="48dp"
         android:text="Macho"
         app:layout_constraintStart_toEndOf="@+id/lblSexo"
         app:layout_constraintTop_toBottomOf="@+id/txtRaza" />
@@ -116,6 +119,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:minHeight="48dp"
         android:text="Hembra"
         app:layout_constraintStart_toEndOf="@+id/rbMacho"
         app:layout_constraintTop_toBottomOf="@+id/txtRaza" />
