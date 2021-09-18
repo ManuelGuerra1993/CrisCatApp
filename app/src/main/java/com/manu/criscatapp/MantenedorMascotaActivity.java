@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -28,6 +29,7 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
     EditText txtNombre, txtRaza, txtanioNacimiento, txtPropietario, txtEstado;
     RadioButton rbCanino, rbFelino, rbMacho, rbHembra;
     Button btnGuardar;
+    TextView lblTitulo;
 
     String nombres, raza, propietario, estado, id;
     int anionacimiento, especie, sexo;
@@ -62,6 +64,9 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
             txtanioNacimiento.setText(getIntent().getStringExtra("anioNacimiento"));
             txtPropietario.setText(getIntent().getStringExtra("propietario"));
             txtEstado.setText(getIntent().getStringExtra("estado"));
+            lblTitulo = findViewById(R.id.lblTitulo);
+            lblTitulo.setText("ACTUALIZA LA INFORMACIÓN DE TU MASCOTA");
+            btnGuardar.setText("ACTUALIZAR");
         }
     }
 
@@ -89,7 +94,11 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
         raza = txtRaza.getText().toString();
         propietario = txtPropietario.getText().toString();
         estado = txtEstado.getText().toString();
-        anionacimiento = Integer.parseInt(txtanioNacimiento.getText().toString());
+        if (txtanioNacimiento.getText().toString().equals("")){
+            anionacimiento = 0;
+        } else {
+            anionacimiento = Integer.parseInt(txtanioNacimiento.getText().toString());
+        }
         if (rbFelino.isChecked()){
             especie = 2;
         } if (rbCanino.isChecked()){
@@ -100,6 +109,7 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
         } if (rbHembra.isChecked()){
             sexo = 2;
         }
+        validarCampos();
 
         if (registrar == true) {
             Mascota mascota = new Mascota();
@@ -128,6 +138,26 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
             Intent intent = new Intent(MantenedorMascotaActivity.this, ListaMascotaActivity.class);
             startActivity(intent);
         }
+    }
+
+    private boolean validarCampos(){
+        boolean retorno = true;
+        if (nombres.isEmpty()){
+            txtNombre.setError("El nombre de la mascota es obligatorio");
+            retorno=false;
+        }
+        if (raza.isEmpty()){
+            txtRaza.setError("Es importante saber la raza");
+            retorno=false;
+        }
+        if (anionacimiento == 0){
+            txtanioNacimiento.setError("Es importante saber el Año de nacimiento");
+            retorno = false;
+        }
+        if (propietario.isEmpty()){
+            txtPropietario.setError("Es importante saber quien es el propietario");
+        }
+        return retorno;
     }
 
     private void inicializarFirebase(){

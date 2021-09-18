@@ -33,18 +33,6 @@ public class EmpezarActivity extends AppCompatActivity {
 
         Timer tiempo = new Timer();
         tiempo.schedule(tarea,5000);
-
-
-
-
-        btnEmpezar = findViewById(R.id.btnEmpezar);
-
-        mAuth = FirebaseAuth.getInstance();
-
-        btnEmpezar.setOnClickListener(view -> {
-            mAuth.signOut();
-            startActivity(new Intent(this, Home.class));
-        });
     }
 
 

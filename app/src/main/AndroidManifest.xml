@@ -23,6 +23,7 @@
             android:exported="true"/>
         <activity
             android:name=".LoginActivity"
+            android:label="VETERINARIA CRISCAT"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,12 +33,15 @@
         </activity>
         <activity
             android:name=".EmpezarActivity"
+            android:label=""
             android:exported="true" />
         <activity
             android:name=".MantenedorMascotaActivity"
+            android:label="MASCOTAS"
             android:exported="true" />
         <activity
             android:name=".ListaMascotaActivity"
+            android:label="TUS MASCOTAS"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
