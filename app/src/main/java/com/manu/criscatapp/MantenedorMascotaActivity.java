@@ -109,34 +109,40 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
         } if (rbHembra.isChecked()){
             sexo = 2;
         }
-        validarCampos();
 
         if (registrar == true) {
-            Mascota mascota = new Mascota();
-            mascota.setId(UUID.randomUUID().toString());
-            mascota.setNombre(nombres);
-            mascota.setRaza(raza);
-            mascota.setPropietario(propietario);
-            mascota.setEstado(estado);
-            mascota.setAnioNacimiento(anionacimiento);
-            mascota.setEspecie(especie);
-            mascota.setSexo(sexo);
-            dbReference.child("Mascota").child(mascota.getId()).setValue(mascota);
-            Toast.makeText(this, "Mascota registrada", Toast.LENGTH_SHORT).show();
-        } else {
-            HashMap map = new HashMap();
-            map.put("nombre",nombres);
-            map.put("especie",especie);
-            map.put("raza",raza);
-            map.put("sexo",sexo);
-            map.put("anioNacimiento", anionacimiento);
-            map.put("propietario",propietario);
-            map.put("estado",estado);
-            dbReference.child("Mascota").child(id).updateChildren(map);
-            Toast.makeText(MantenedorMascotaActivity.this, "Mascota actualizada", Toast.LENGTH_SHORT).show();
+            if (validarCampos()==true) {
+                Mascota mascota = new Mascota();
+                mascota.setId(UUID.randomUUID().toString());
+                mascota.setNombre(nombres);
+                mascota.setRaza(raza);
+                mascota.setPropietario(propietario);
+                mascota.setEstado(estado);
+                mascota.setAnioNacimiento(anionacimiento);
+                mascota.setEspecie(especie);
+                mascota.setSexo(sexo);
+                dbReference.child("Mascota").child(mascota.getId()).setValue(mascota);
+                Toast.makeText(this, "Mascota registrada", Toast.LENGTH_SHORT).show();
 
-            Intent intent = new Intent(MantenedorMascotaActivity.this, ListaMascotaActivity.class);
-            startActivity(intent);
+                Intent intent = new Intent(MantenedorMascotaActivity.this, ListaMascotaActivity.class);
+                startActivity(intent);
+            } else{}
+        } else {
+            if (validarCampos()==true) {
+                HashMap map = new HashMap();
+                map.put("nombre", nombres);
+                map.put("especie", especie);
+                map.put("raza", raza);
+                map.put("sexo", sexo);
+                map.put("anioNacimiento", anionacimiento);
+                map.put("propietario", propietario);
+                map.put("estado", estado);
+                dbReference.child("Mascota").child(id).updateChildren(map);
+                Toast.makeText(MantenedorMascotaActivity.this, "Mascota actualizada", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(MantenedorMascotaActivity.this, ListaMascotaActivity.class);
+                startActivity(intent);
+            } else {}
         }
     }
 
@@ -156,6 +162,7 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
         }
         if (propietario.isEmpty()){
             txtPropietario.setError("Es importante saber quien es el propietario");
+            retorno = false;
         }
         return retorno;
     }
