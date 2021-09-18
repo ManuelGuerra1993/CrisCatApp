@@ -44,18 +44,18 @@
         android:id="@+id/lblEspecie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="50dp"
         android:text="Especie: "
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota" />
 
     <RadioGroup
-        android:layout_width="280dp"
-        android:layout_height="80dp"
+        android:id="@+id/radioGroup"
+        android:layout_width="122dp"
+        android:layout_height="76dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/lblraza"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/lblEspecie"
         app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota">
 
@@ -65,9 +65,9 @@
             android:layout_height="28dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
+            android:checked="true"
             android:minHeight="48dp"
             android:text="Canino"
-            android:checked="true"
             app:layout_constraintStart_toEndOf="@+id/lblEspecie"
             app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota"
             tools:ignore="TouchTargetSizeCheck" />
@@ -112,41 +112,55 @@
         android:id="@+id/lblSexo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
         android:text="Sexo: "
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtRaza" />
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota" />
 
-    <RadioButton
-        android:id="@+id/rbMacho"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+    <RadioGroup
+        android:layout_width="122dp"
+        android:layout_height="76dp"
         android:layout_marginTop="8dp"
-        android:minHeight="48dp"
-        android:text="Macho"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/lblraza"
         app:layout_constraintStart_toEndOf="@+id/lblSexo"
-        app:layout_constraintTop_toBottomOf="@+id/txtRaza" />
+        app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota">
 
-    <RadioButton
-        android:id="@+id/rbHembra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:minHeight="48dp"
-        android:text="Hembra"
-        app:layout_constraintStart_toEndOf="@+id/rbMacho"
-        app:layout_constraintTop_toBottomOf="@+id/txtRaza" />
+        <RadioButton
+            android:id="@+id/rbMacho"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:checked="true"
+            android:minHeight="48dp"
+            android:text="Macho"
+            app:layout_constraintStart_toEndOf="@+id/lblSexo"
+            tools:ignore="TouchTargetSizeCheck"
+            tools:layout_editor_absoluteY="111dp" />
+
+        <RadioButton
+            android:id="@+id/rbHembra"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:minHeight="48dp"
+            android:text="Hembra"
+            tools:ignore="TouchTargetSizeCheck"
+            tools:layout_editor_absoluteX="250dp"
+            tools:layout_editor_absoluteY="166dp" />
+    </RadioGroup>
 
     <TextView
         android:id="@+id/lblanionacimiento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:text="Año de nacimiento: "
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblSexo" />
+        app:layout_constraintTop_toBottomOf="@+id/txtRaza" />
 
     <EditText
         android:id="@+id/txtanionacimiento"
@@ -200,9 +214,11 @@
         android:layout_marginTop="8dp"
         android:textSize="14sp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="none"
+        android:focusable="false"
+        android:textIsSelectable="false"
         android:minHeight="48dp"
-        android:hint="Estado"
+        android:text="Vigente"
         app:layout_constraintStart_toEndOf="@+id/textView9"
         app:layout_constraintTop_toBottomOf="@+id/txtPropietario" />
 

@@ -1,7 +1,9 @@
 package com.manu.criscatapp;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +15,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.manu.criscatapp.modelo.Mascota;
 
 import java.util.ArrayList;
@@ -58,7 +63,22 @@ public class AdaptadorPersonalizado extends RecyclerView.Adapter<AdaptadorPerson
         holder.btnEliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                AlertDialog.Builder ventana = new AlertDialog.Builder(context);
+                ventana.setMessage("¿Desea eliminar a la mascota?");
+                ventana.setPositiveButton("SI", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        FirebaseDatabase fbDatabase;
+                        DatabaseReference dbReference;
+                        FirebaseApp.initializeApp(context);
+                        fbDatabase = FirebaseDatabase.getInstance();
+                        dbReference = fbDatabase.getReference();
 
+                        dbReference.child("Mascota").child(listaMascota.get(position).getId()).removeValue();
+                    }
+                });
+                ventana.setNegativeButton("NO",null);
+                ventana.create().show();
             }
         });
     }

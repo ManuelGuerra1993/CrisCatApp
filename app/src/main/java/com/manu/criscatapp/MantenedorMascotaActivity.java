@@ -101,11 +101,6 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
             sexo = 2;
         }
 
-        /*felino = Integer.parseInt(rbFelino.getText().toString());
-        canino = Integer.parseInt(rbCanino.getText().toString());
-        macho = Integer.parseInt(rbMacho.getText().toString());
-        hembra = Integer.parseInt(rbHembra.getText().toString());*/
-
         if (registrar == true) {
             Mascota mascota = new Mascota();
             mascota.setId(UUID.randomUUID().toString());

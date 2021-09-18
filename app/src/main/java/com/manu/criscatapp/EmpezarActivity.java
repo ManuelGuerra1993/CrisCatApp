@@ -8,6 +8,9 @@ import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class EmpezarActivity extends AppCompatActivity {
 
     private Button btnEmpezar;
@@ -18,6 +21,21 @@ public class EmpezarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_empezar);
+
+        TimerTask tarea = new TimerTask() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(EmpezarActivity.this,Home.class);
+                startActivity(intent);
+                finish();
+            }
+        };
+
+        Timer tiempo = new Timer();
+        tiempo.schedule(tarea,5000);
+
+
+
 
         btnEmpezar = findViewById(R.id.btnEmpezar);
 
