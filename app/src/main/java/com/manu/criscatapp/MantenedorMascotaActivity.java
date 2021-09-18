@@ -48,16 +48,17 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
             registrar = false;
             id = getIntent().getStringExtra("id");
             txtNombre.setText(getIntent().getStringExtra("nombre"));
-            //rbCanino.setText(getIntent().getStringExtra("especie"));
-            //rbFelino.setText(getIntent().getStringExtra("especie"));
             String e1 = getIntent().getStringExtra("especie");
             if (e1.equals("1")){
-                rbCanino.setSelected(true);
-            } else {rbFelino.setSelected(true);}
-
+                rbCanino.setChecked(true);
+            } else {rbFelino.setChecked(true);}
             txtRaza.setText(getIntent().getStringExtra("raza"));
-            rbMacho.setText(getIntent().getStringExtra("sexo"));
-            rbHembra.setText(getIntent().getStringExtra("sexo"));
+            String s1 = getIntent().getStringExtra("sexo");
+            if (s1.equals("1")) {
+                rbMacho.setChecked(true);
+            } else {
+                rbHembra.setChecked(true);
+            }
             txtanioNacimiento.setText(getIntent().getStringExtra("anioNacimiento"));
             txtPropietario.setText(getIntent().getStringExtra("propietario"));
             txtEstado.setText(getIntent().getStringExtra("estado"));

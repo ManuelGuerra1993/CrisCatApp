@@ -20,7 +20,7 @@
         android:id="@+id/lblNombreMascota"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="Nombre: "
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblTitulo" />
@@ -49,33 +49,48 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota" />
 
-    <RadioButton
-        android:id="@+id/rbCanino"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+    <RadioGroup
+        android:layout_width="280dp"
+        android:layout_height="80dp"
         android:layout_marginTop="8dp"
-        android:minHeight="48dp"
-        android:text="Canino"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/lblraza"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/lblEspecie"
-        app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota" />
+        app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota">
 
-    <RadioButton
-        android:id="@+id/rbFelino"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:minHeight="48dp"
-        android:text="Felino"
-        app:layout_constraintStart_toEndOf="@+id/rbCanino"
-        app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota" />
+        <RadioButton
+            android:id="@+id/rbCanino"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:minHeight="48dp"
+            android:text="Canino"
+            android:checked="true"
+            app:layout_constraintStart_toEndOf="@+id/lblEspecie"
+            app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <RadioButton
+            android:id="@+id/rbFelino"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:minHeight="48dp"
+            android:text="Felino"
+            app:layout_constraintStart_toEndOf="@+id/rbCanino"
+            app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </RadioGroup>
 
     <TextView
         android:id="@+id/lblraza"
-        android:layout_width="66dp"
-        android:layout_height="13dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:text="Raza: "
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblEspecie" />
@@ -84,11 +99,11 @@
         android:id="@+id/txtRaza"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
         android:ems="10"
+        android:hint="Ingrese raza"
+        android:textSize="14sp"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:hint="Ingrese raza"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblraza" />
@@ -137,6 +152,7 @@
         android:id="@+id/txtanionacimiento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="14sp"
         android:ems="10"
         android:inputType="number"
         android:minHeight="48dp"
@@ -159,6 +175,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:textSize="14sp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
@@ -181,6 +198,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:textSize="14sp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
@@ -194,6 +212,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Registrar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEstado" />
