@@ -4,12 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnIngresar;
     private Button btnRegistrarC;
     private TextView lblOlvidarCon;
+    private ImageButton btnLlamanos;
 
     private FirebaseAuth mAuth;
 
@@ -38,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         btnIngresar = findViewById(R.id.btnIngresar);
         btnRegistrarC = findViewById(R.id.btnRegistrarC);
         lblOlvidarCon =findViewById(R.id.lblOlvidarCon);
+        btnLlamanos = findViewById(R.id.btnLlamanos);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -55,6 +59,15 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 abrirCambiarContra();
+            }
+        });
+        btnLlamanos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String phone = "tel:977146556";
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse(phone));
+                startActivity(intent);
             }
         });
     }
