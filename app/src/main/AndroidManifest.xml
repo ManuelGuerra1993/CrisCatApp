@@ -13,18 +13,22 @@
         android:theme="@style/Theme.CrisCatApp"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".ContactActivity"
-            android:label="Sugerencias o Reclamaciones"
+            android:name=".CambiarContraActivity"
             android:exported="true" />
+        <activity
+            android:name=".ContactActivity"
+            android:exported="true"
+            android:label="Sugerencias o Reclamaciones" />
         <activity
             android:name=".RegistrarActivity"
             android:exported="true" />
-        <activity android:name=".Home"
-            android:exported="true"/>
+        <activity
+            android:name=".Home"
+            android:exported="true" />
         <activity
             android:name=".LoginActivity"
-            android:label="VETERINARIA CRISCAT"
-            android:exported="true">
+            android:exported="true"
+            android:label="VETERINARIA CRISCAT">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,16 +37,16 @@
         </activity>
         <activity
             android:name=".EmpezarActivity"
-            android:label=""
-            android:exported="true" />
+            android:exported="true"
+            android:label="" />
         <activity
             android:name=".MantenedorMascotaActivity"
-            android:label="MASCOTAS"
-            android:exported="true" />
+            android:exported="true"
+            android:label="MASCOTAS" />
         <activity
             android:name=".ListaMascotaActivity"
-            android:label="TUS MASCOTAS"
-            android:exported="true" />
+            android:exported="true"
+            android:label="TUS MASCOTAS" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />

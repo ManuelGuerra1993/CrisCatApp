@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText txtPasswaord;
     private Button btnIngresar;
     private Button btnRegistrarC;
+    private TextView lblOlvidarCon;
 
     private FirebaseAuth mAuth;
 
@@ -35,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         txtPasswaord = findViewById(R.id.txtPassword);
         btnIngresar = findViewById(R.id.btnIngresar);
         btnRegistrarC = findViewById(R.id.btnRegistrarC);
+        lblOlvidarCon =findViewById(R.id.lblOlvidarCon);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -48,6 +51,17 @@ public class LoginActivity extends AppCompatActivity {
                 abrirRegistrarActivity();
             }
         });
+        lblOlvidarCon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                abrirCambiarContra();
+            }
+        });
+    }
+
+    private void abrirCambiarContra() {
+        Intent intent = new Intent(this,CambiarContraActivity.class);
+        startActivity(intent);
     }
 
     private void abrirRegistrarActivity() {
