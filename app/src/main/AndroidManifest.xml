@@ -3,7 +3,7 @@
     package="com.manu.criscatapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -13,6 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CrisCatApp"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".CitasActivity"
+            android:label="REGISTRO DE CITAS"
+            android:exported="true" />
         <activity
             android:name=".CambiarContraActivity"
             android:exported="true" />
