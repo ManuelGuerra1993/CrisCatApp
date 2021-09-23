@@ -3,6 +3,7 @@ package com.manu.criscatapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DownloadManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -12,6 +13,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -19,6 +25,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.messaging.FirebaseMessaging;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -53,6 +63,13 @@ public class RegistrarActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
+
+        FirebaseMessaging.getInstance().subscribeToTopic("enviaratodos").addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Toast.makeText(RegistrarActivity.this, "Suscrito a enviar a todos", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         btnRegistrar.setOnClickListener(view -> {
             createUsuario();
@@ -117,11 +134,82 @@ public class RegistrarActivity extends AppCompatActivity {
                         });
                         Toast.makeText(RegistrarActivity.this, "Usuario Registrado", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(RegistrarActivity.this, LoginActivity.class));
+                        llamadaEspecifica(nombre,apellidos);
                     }else{
                         Toast.makeText(RegistrarActivity.this, "Usuario no registrado"+task.getException(), Toast.LENGTH_SHORT).show();
                     }
                 }
             });
+        }
+
+    }
+
+    private void llamadaEspecifica(String nombre, String apellido){
+        RequestQueue myrequest = Volley.newRequestQueue(getApplicationContext());
+        JSONObject json = new JSONObject();
+
+        try {
+            String token = "fCW2QxxvSYK5MTApT-0Voz:APA91bEREGm_Z10vT38CkqZYg14lYgHI48QDIGUumUlRFobjhV4oj_E02oJ3ejiO_nzGrjibASCze-2MaNinWr79j7e5N5dQeeLylg2P8URvB-KmH7GHrY9sGYLpBpeq91cp6KL7hvi-";
+
+            json.put("to",token);
+            JSONObject notificacion = new JSONObject();
+            notificacion.put("titulo","BIENVENIDO");
+            notificacion.put("detalle","Es momento de que inicies sesion "+nombre+" "+apellido);
+
+            json.put("data",notificacion);
+
+            String URL = "https://fcm.googleapis.com/fcm/send";
+
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST,URL,json,null,null){
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    Map<String, String> header = new HashMap<>();
+
+                    header.put("content-type","application/json");
+                    header.put("authorization","key=AAAAff9hW18:APA91bG1vwHpPwDx2988V458z6qOVKiXRpprWUHSf1oCUy7O3_8PKCUJ7QpU72tdJChlfSxNqPkP8JqeUZHvZbGkChV3rjI_gUptqXJ54u5DIEfyC4Wzgz55yfvLkt9mJM_83tAM_r4R");
+                    return header;
+                }
+            };
+
+            myrequest.add(request);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private void llamadaProgramada(){
+        RequestQueue myrequest = Volley.newRequestQueue(getApplicationContext());
+        JSONObject json = new JSONObject();
+
+        try {
+            //String token = "fCW2QxxvSYK5MTApT-0Voz:APA91bEREGm_Z10vT38CkqZYg14lYgHI48QDIGUumUlRFobjhV4oj_E02oJ3ejiO_nzGrjibASCze-2MaNinWr79j7e5N5dQeeLylg2P8URvB-KmH7GHrY9sGYLpBpeq91cp6KL7hvi-";
+
+            json.put("to","/topics/"+"enviaratodos");
+            JSONObject notificacion = new JSONObject();
+            notificacion.put("titulo","soy un titulo :)");
+            notificacion.put("detalle","soy un detalle");
+
+            json.put("data",notificacion);
+
+            String URL = "https://fcm.googleapis.com/fcm/send";
+
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST,URL,json,null,null){
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    Map<String, String> header = new HashMap<>();
+
+                    header.put("content-type","application/json");
+                    header.put("authorization","key=AAAAff9hW18:APA91bG1vwHpPwDx2988V458z6qOVKiXRpprWUHSf1oCUy7O3_8PKCUJ7QpU72tdJChlfSxNqPkP8JqeUZHvZbGkChV3rjI_gUptqXJ54u5DIEfyC4Wzgz55yfvLkt9mJM_83tAM_r4R");
+                    return header;
+                }
+            };
+
+            myrequest.add(request);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
 
     }
