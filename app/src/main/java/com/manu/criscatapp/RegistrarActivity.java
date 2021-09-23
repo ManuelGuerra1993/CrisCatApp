@@ -67,7 +67,7 @@ public class RegistrarActivity extends AppCompatActivity {
         FirebaseMessaging.getInstance().subscribeToTopic("enviaratodos").addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                Toast.makeText(RegistrarActivity.this, "Suscrito a enviar a todos", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(RegistrarActivity.this, "Suscrito a enviar a todos", Toast.LENGTH_SHORT).show();
             }
         });
 
