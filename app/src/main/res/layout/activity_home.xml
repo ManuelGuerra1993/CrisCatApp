@@ -7,27 +7,13 @@
     android:background="@drawable/deg_background"
     tools:context=".Home">
 
-    <ImageView
-        android:id="@+id/img_logo"
-        android:layout_width="109dp"
-        android:layout_height="127dp"
-        android:focusableInTouchMode="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.801"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.052"
-        app:srcCompat="@drawable/criscatapp_wb"
-        tools:ignore="SpeakableTextPresentCheck" />
-
     <Button
         android:id="@+id/btn_pet"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="125dp"
         android:layout_height="169dp"
         android:layout_marginStart="20dp"
-        android:background="#4D6B78"
+        android:background="@drawable/design_homebuttons"
         android:drawableTop="@drawable/ic_pet_house"
         android:drawablePadding="10dp"
         android:paddingTop="30dp"
@@ -36,11 +22,11 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_fares"
         app:layout_constraintEnd_toStartOf="@+id/btn_dates"
-        app:layout_constraintHorizontal_bias="0.691"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.946"
+        app:layout_constraintVertical_bias="0.968"
         app:layout_constraintWidth_default="wrap" />
 
     <Button
@@ -48,9 +34,9 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="125dp"
         android:layout_height="169dp"
-        android:layout_marginTop="172dp"
+        android:layout_marginTop="216dp"
         android:layout_marginEnd="60dp"
-        android:background="#343F4B"
+        android:background="@drawable/design_homebuttons_2"
         android:drawableTop="@drawable/ic_baseline_calendar_today_24"
         android:paddingTop="40dp"
         android:text="CITAS"
@@ -67,8 +53,9 @@
         android:layout_width="125dp"
         android:layout_height="169dp"
         android:layout_marginStart="20dp"
-        android:layout_marginBottom="80dp"
-        android:background="#8E8E8E"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/design_homebuttons_2"
+        android:backgroundTint="#FF9800"
         android:drawableTop="@drawable/ic_budget"
         android:drawablePadding="10dp"
         android:paddingTop="20dp"
@@ -78,7 +65,7 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_contact"
-        app:layout_constraintHorizontal_bias="0.658"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintWidth_default="wrap"
@@ -90,10 +77,10 @@
         android:layout_width="125dp"
         android:layout_height="169dp"
         android:layout_marginEnd="60dp"
-        android:layout_marginBottom="80dp"
-        android:background="#969FAA"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/design_homebuttons"
+        android:backgroundTint="#335A8A"
         android:drawableTop="@drawable/ic_contact_form"
-        android:drawablePadding="0dp"
         android:paddingTop="20dp"
         android:text="SUGERENCIAS Y/O RECLAMOS"
         android:textAlignment="gravity"
@@ -105,18 +92,32 @@
         app:layout_constraintWidth_default="wrap"
         tools:ignore="TextContrastCheck" />
 
-    <EditText
-        android:id="@+id/txt_welcome"
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="115dp"
+        android:layout_height="111dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.537"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.17"
+        app:srcCompat="@drawable/criscat_logo" />
+
+    <TextView
+        android:id="@+id/welcome_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:layout_marginTop="36dp"
+        android:fontFamily="sans-serif"
         android:text="Bienvenido !"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintHorizontal_bias="0.271"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

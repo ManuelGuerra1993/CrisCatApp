@@ -29,7 +29,8 @@
             android:exported="true" />
         <activity
             android:name=".Home"
-            android:exported="true" />
+            android:exported="true"
+            android:label="Home"/>
         <activity
             android:name=".LoginActivity"
             android:exported="true"
