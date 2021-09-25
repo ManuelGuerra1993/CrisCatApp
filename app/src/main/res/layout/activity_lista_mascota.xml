@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mascota"
+    android:background="@drawable/pet_drawable"
     tools:context=".ListaMascotaActivity"
     android:padding="20dp">
 
@@ -36,6 +36,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_input_add"
+        android:tint="@color/new_lightBlue"
+        android:backgroundTint="@color/blue_real"
         tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck"
         android:contentDescription="TODO" />
 

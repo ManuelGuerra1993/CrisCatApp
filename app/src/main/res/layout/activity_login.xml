@@ -74,6 +74,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="INGRESAR"
+        android:background="@drawable/design_actionbuttons"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPassword" />
@@ -84,6 +86,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="REGISTRAR CUENTA"
+        android:background="@drawable/design_actionbuttons"
+        android:backgroundTint="@color/new_lightBlue"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblOlvidarCon" />
@@ -104,10 +109,13 @@
         android:id="@+id/btnLlamanos"
         android:layout_width="205dp"
         android:layout_height="54dp"
+        android:layout_marginStart="176dp"
         android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnRegistrarC"
-        app:srcCompat="@drawable/llamanos" />
+        app:srcCompat="@drawable/llamanos"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

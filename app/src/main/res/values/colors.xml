@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray_capp">#28333F</color>
     <color name="gris">#E1E6EF</color>
+    <color name="new_lightBlue">#66FECB</color>
+    <color name="blue_real">#00339A</color>
 </resources>
