@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnIngresar;
     private Button btnRegistrarC;
     private TextView lblOlvidarCon;
-    private ImageButton btnLlamanos;
+    private Button btnLlamanos;
     private Button btnUbicanos;
 
     private FirebaseAuth mAuth;
