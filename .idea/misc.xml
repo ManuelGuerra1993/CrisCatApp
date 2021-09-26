@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/drawable/custom_button.xml" value="0.1" />
+        <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/drawable/custom_input.xml" value="0.1" />
+        <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/drawable/design_input.xml" value="0.1" />
         <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/layout/activity_citas.xml" value="0.22" />
         <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/layout/activity_contact.xml" value="0.1" />
         <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/layout/activity_empezar.xml" value="0.22" />
