@@ -28,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnRegistrarC;
     private TextView lblOlvidarCon;
     private ImageButton btnLlamanos;
+    private Button btnUbicanos;
 
     private FirebaseAuth mAuth;
 
@@ -42,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         btnRegistrarC = findViewById(R.id.btnRegistrarC);
         lblOlvidarCon =findViewById(R.id.lblOlvidarCon);
         btnLlamanos = findViewById(R.id.btnLlamanos);
+        btnUbicanos = findViewById(R.id.btnUbicanos);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -67,6 +69,16 @@ public class LoginActivity extends AppCompatActivity {
                 String phone = "tel:977146556";
                 Intent intent = new Intent(Intent.ACTION_DIAL);
                 intent.setData(Uri.parse(phone));
+                startActivity(intent);
+            }
+        });
+        btnUbicanos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =  new Intent(LoginActivity.this,MapaCrisCatActivity.class);
+                intent.putExtra("latitud","-12.0166938");
+                intent.putExtra("longitud","-76.9969415");
+                intent.putExtra("titulo","Veterinaria CrisCat");
                 startActivity(intent);
             }
         });
