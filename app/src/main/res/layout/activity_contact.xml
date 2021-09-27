@@ -7,18 +7,19 @@
     tools:context=".ContactActivity">
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="272dp"
+        android:id="@+id/txtTitulo"
+        android:layout_width="287dp"
         android:layout_height="51dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/design_input"
         android:ems="10"
-        android:hint="Ingrese título del reclamo"
+        android:hint="Ingrese título del reclamo o sugerencia"
         android:inputType="textPersonName"
+        android:padding="10dp"
         android:textAlignment="viewStart"
         android:textSize="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/txtDetalle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.453"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -29,24 +30,26 @@
         android:text="Ingrese sugerencia o reclamo :"
         android:textSize="16dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtTitulo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.417"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/txtDetalle"
         android:layout_width="287dp"
         android:layout_height="143dp"
-        android:layout_marginEnd="60dp"
         android:layout_marginBottom="32dp"
+        android:background="@drawable/design_input"
         android:ems="10"
         android:gravity="start|top"
-        android:inputType="textMultiLine"
         android:hint="Cuéntanos en que podemos ayudar"
+        android:inputType="textMultiLine"
+        android:padding="10dp"
         android:textSize="14dp"
         app:layout_constraintBottom_toTopOf="@+id/btnSendContact"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
