@@ -37,6 +37,10 @@
             android:exported="true"
             android:label="Home" />
         <activity
+            android:name=".FareActivity"
+            android:exported="true"
+            android:label="Servicios Criscat" />
+        <activity
             android:name=".LoginActivity"
             android:exported="true"
             android:label="VETERINARIA CRISCAT">
