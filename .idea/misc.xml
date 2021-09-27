@@ -3,31 +3,43 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/drawable/custom_button.xml" value="0.1" />
-        <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/drawable/custom_input.xml" value="0.1" />
-        <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/drawable/design_actionbuttons.xml" value="0.2203125" />
-        <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/drawable/design_button_white.xml" value="0.2203125" />
-        <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/drawable/design_input.xml" value="0.1" />
-        <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/drawable/ic_pata.xml" value="0.2203125" />
-        <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/layout/activity_citas.xml" value="0.22" />
-        <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/layout/activity_contact.xml" value="0.2" />
         <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/layout/activity_empezar.xml" value="0.22" />
         <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/layout/activity_home.xml" value="0.22" />
         <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/layout/activity_lista_mascota.xml" value="0.25" />
-        <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/layout/activity_mantenedor_mascota.xml" value="0.25" />
-        <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/layout/activity_mapa.xml" value="0.19010416666666666" />
-        <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/layout/activity_mapa_cris_cat.xml" value="0.20416666666666666" />
         <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/layout/activity_registrar.xml" value="0.25" />
         <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/layout/diseno_fila.xml" value="0.25" />
-        <entry key="..\:/UPC/Desarrollo de moviles/CrisCatApp/app/src/main/res/mipmap-anydpi-v26/ic_banner.xml" value="0.1125" />
         <entry key="..\:/UPC_Movil/CrisCatApp/app/src/main/res/drawable/custom_button.xml" value="0.2703125" />
         <entry key="..\:/UPC_Movil/CrisCatApp/app/src/main/res/drawable/custom_input.xml" value="0.2703125" />
         <entry key="..\:/UPC_Movil/CrisCatApp/app/src/main/res/layout/activity_cambiar_contra.xml" value="0.2" />
         <entry key="..\:/UPC_Movil/CrisCatApp/app/src/main/res/layout/activity_contact.xml" value="0.25416666666666665" />
         <entry key="..\:/UPC_Movil/CrisCatApp/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
         <entry key="..\:/UPC_Movil/CrisCatApp/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/drawable-v24/ic_banner_foreground.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/drawable/custom_button.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/drawable/deg_background.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/drawable/design_actionbuttons.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/drawable/design_homebuttons.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/drawable/design_homebuttons_2.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/drawable/ic_apellido.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/drawable/ic_baseline_calendar_today_24.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/drawable/pet_drawable.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/layout/activity_citas.xml" value="0.25" />
+        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/layout/activity_contact.xml" value="0.25" />
+        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/layout/activity_empezar.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/layout/activity_fare.xml" value="0.22" />
+        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/layout/activity_home.xml" value="0.2" />
+        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/layout/activity_lista_mascota.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/layout/activity_login.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/layout/activity_mantenedor_mascota.xml" value="0.25" />
+        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/layout/activity_mapa_cris_cat.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/layout/activity_registrar.xml" value="0.25" />
+        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/layout/diseno_fila.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/FOLLOWUP/AndroidStudioProjects/CrisCatApp-1/app/src/main/res/mipmap-anydpi-v26/ic_banner.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
