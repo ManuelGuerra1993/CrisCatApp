@@ -21,17 +21,22 @@ import com.android.volley.toolbox.Volley;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.manu.criscatapp.modelo.Usuario;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 public class RegistrarActivity extends AppCompatActivity {
 
@@ -44,9 +49,11 @@ public class RegistrarActivity extends AppCompatActivity {
     private Button btnRegistrar;
     private Button btnIniciar;
 
-    private String usuarioID;
+    String usuarioID;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
+    DatabaseReference dbReference;
+    FirebaseDatabase fbDataBase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +68,7 @@ public class RegistrarActivity extends AppCompatActivity {
         btnRegistrar = findViewById(R.id.btnRegistrar);
         btnIniciar = findViewById(R.id.btnIniciar);
 
+        inicializarFirebase();
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
@@ -70,6 +78,7 @@ public class RegistrarActivity extends AppCompatActivity {
                 //Toast.makeText(RegistrarActivity.this, "Suscrito a enviar a todos", Toast.LENGTH_SHORT).show();
             }
         });
+
 
         btnRegistrar.setOnClickListener(view -> {
             createUsuario();
@@ -132,6 +141,14 @@ public class RegistrarActivity extends AppCompatActivity {
                                 Log.d("TAG","OnSuccess: Datos Registrados"+usuarioID);
                             }
                         });
+                        Usuario u = new Usuario();
+                        u.setUid(usuarioID);
+                        u.setNombres(nombre);
+                        u.setApellidos(apellidos);
+                        u.setCorreo(correo);
+                        u.setTelefono(telefono);
+                        u.setContrasena(contrasenia);
+                        dbReference.child("Usuario").child(u.getUid()).setValue(u);
                         Toast.makeText(RegistrarActivity.this, "Usuario Registrado", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(RegistrarActivity.this, LoginActivity.class));
                         llamadaEspecifica(nombre,apellidos);
@@ -214,5 +231,10 @@ public class RegistrarActivity extends AppCompatActivity {
 
     }
 
+    private void inicializarFirebase(){
+        FirebaseApp.initializeApp(this);
+        fbDataBase = FirebaseDatabase.getInstance();
+        dbReference = fbDataBase.getReference();
+    }
 
 }

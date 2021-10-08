@@ -21,6 +21,13 @@ public class Mascota {
                 ", estado='" + estado + '\'';
     }
 
+    public Mascota() {
+    }
+
+    public Mascota(String propietario) {
+        this.propietario = propietario;
+    }
+
     public String getId() {
         return id;
     }

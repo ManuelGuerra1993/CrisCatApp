@@ -1,10 +1,14 @@
 package com.manu.criscatapp;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,8 +18,14 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserInfo;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.manu.criscatapp.modelo.Mascota;
 
 import java.util.HashMap;
@@ -25,6 +35,9 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
 
     FirebaseDatabase fbDataBase;
     DatabaseReference dbReference;
+    FirebaseAuth mAuth;
+    FirebaseAuth.AuthStateListener mAuthListener;
+    private String userID;
 
     EditText txtNombre, txtRaza, txtanioNacimiento, txtPropietario, txtEstado;
     RadioButton rbCanino, rbFelino, rbMacho, rbHembra;
@@ -92,7 +105,7 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
     private void registrar(){
         nombres = txtNombre.getText().toString();
         raza = txtRaza.getText().toString();
-        propietario = txtPropietario.getText().toString();
+        //propietario = txtPropietario.getText().toString();
         estado = txtEstado.getText().toString();
         if (txtanioNacimiento.getText().toString().equals("")){
             anionacimiento = 0;
@@ -116,7 +129,7 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
                 mascota.setId(UUID.randomUUID().toString());
                 mascota.setNombre(nombres);
                 mascota.setRaza(raza);
-                mascota.setPropietario(propietario);
+                mascota.setPropietario(userID);
                 mascota.setEstado(estado);
                 mascota.setAnioNacimiento(anionacimiento);
                 mascota.setEspecie(especie);
@@ -160,16 +173,65 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
             txtanioNacimiento.setError("Es importante saber el Año de nacimiento");
             retorno = false;
         }
-        if (propietario.isEmpty()){
+        /*if (propietario.isEmpty()){
             txtPropietario.setError("Es importante saber quien es el propietario");
             retorno = false;
-        }
+        }*/
         return retorno;
     }
 
     private void inicializarFirebase(){
         FirebaseApp.initializeApp(this);
         fbDataBase = FirebaseDatabase.getInstance();
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        userID = user.getUid();
         dbReference = fbDataBase.getReference();
+
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null){
+                    Log.d("TAG","ID del usuario: "+userID);
+                }
+            }
+        };
+
+        dbReference.child("Mascota").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    //String ido = snapshot.child("raza").getValue().toString();
+                    //txtPropietario.setText(userID);
+                    //Log.d("TAG","uid" +ido);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    public void showData(DataSnapshot dataSnapshot){
+        for (DataSnapshot ds : dataSnapshot.getChildren()){
+
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (mAuthListener != null){
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
     }
 }
