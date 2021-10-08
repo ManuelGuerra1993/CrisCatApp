@@ -105,7 +105,7 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
     private void registrar(){
         nombres = txtNombre.getText().toString();
         raza = txtRaza.getText().toString();
-        //propietario = txtPropietario.getText().toString();
+        propietario = txtPropietario.getText().toString();
         estado = txtEstado.getText().toString();
         if (txtanioNacimiento.getText().toString().equals("")){
             anionacimiento = 0;
@@ -148,7 +148,7 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
                 map.put("raza", raza);
                 map.put("sexo", sexo);
                 map.put("anioNacimiento", anionacimiento);
-                map.put("propietario", userID);
+                map.put("propietario", propietario);
                 map.put("estado", estado);
                 dbReference.child("Mascota").child(id).updateChildren(map);
                 Toast.makeText(MantenedorMascotaActivity.this, "Mascota actualizada", Toast.LENGTH_SHORT).show();

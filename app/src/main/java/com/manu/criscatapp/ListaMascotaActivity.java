@@ -39,6 +39,7 @@ public class ListaMascotaActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseAuth.AuthStateListener mAuthListener;
     private String userID;
+    private String nombre;
 
     List<Mascota> listaMascota = new ArrayList<>();
     List<Usuario> listaUsuario = new ArrayList<>();
@@ -51,25 +52,48 @@ public class ListaMascotaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lista_mascota);
         inicializarFirebase();
         agregarMascota();
-        listarDatos();
+        listaUsuario();
+        //listarDatos();
+
     }
 
     private void listaUsuario(){
-
-        Query q = dbReference.child("Usuario").equalTo(userID);
+        Query q = dbReference.child("Usuario").child(userID);
         //q.addListenerForSingleValueEvent();
-        Log.d("TAG","pRUEBAS: "+   q);
-
-        dbReference.child("Usuario").addValueEventListener(new ValueEventListener() {
+        q.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                listaUsuario.clear();
-                for (DataSnapshot item:snapshot.getChildren()){
-                    Usuario u = item.getValue(Usuario.class);
-                    listaUsuario.add(u);
+                Usuario u = snapshot.getValue(Usuario.class);
+                nombre = u.getNombres().toString();
+                Log.d("TAG","ultima prueba: "+nombre);
 
-                    //Query q1 = u.equals(userID);
-                }
+                dbReference.child("Mascota").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        listaMascota.clear();
+                        for (DataSnapshot item:snapshot.getChildren()){
+                            Mascota m = item.getValue(Mascota.class);
+                            listaMascota.add(m);
+                        }
+                        //adaptador = new ArrayAdapter<Mascota>(ListaMascotaActivity.this, android.R.layout.simple_list_item_1,listaMascota);
+                        //lstMascota.setAdapter(adaptador);
+                        if (nombre.equals("manu99")) {
+                        adaptador = new AdaptadorPersonalizado(ListaMascotaActivity.this, listaMascota);
+                        recyclerMascota.setAdapter(adaptador);
+                        recyclerMascota.setLayoutManager(new LinearLayoutManager(ListaMascotaActivity.this));
+                        } else {
+                            adaptador = new AdaptadorPersonalizado(ListaMascotaActivity.this, listaMascota);
+                            recyclerMascota.setAdapter(adaptador);
+                            recyclerMascota.setLayoutManager(new LinearLayoutManager(ListaMascotaActivity.this));
+                            filtrar(userID);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
 
             @Override
@@ -77,63 +101,6 @@ public class ListaMascotaActivity extends AppCompatActivity {
 
             }
         });
-    }
-
-    private void listarDatos(){
-        /*Query correo = dbReference.child("Usuario").child("correo").equalTo(userID).get();
-        Log.d("TAG","El correo es: "+correo);*/
-        //final String correo="";
-        /*dbReference.child("Usuario").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (final DataSnapshot snapshot1 : snapshot.getChildren()){
-                    dbReference.child("Usuario").child(snapshot1.getKey()).addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            Usuario user = snapshot.getValue(Usuario.class);
-                            String correo = user.getCorreo();
-
-                            Log.d("TAG","el correo es: "+correo);
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                        }
-                    });
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });*/
-
-
-
-        dbReference.child("Mascota").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                listaMascota.clear();
-                for (DataSnapshot item:snapshot.getChildren()){
-                    Mascota m = item.getValue(Mascota.class);
-                    listaMascota.add(m);
-                }
-                //adaptador = new ArrayAdapter<Mascota>(ListaMascotaActivity.this, android.R.layout.simple_list_item_1,listaMascota);
-                //lstMascota.setAdapter(adaptador);
-                adaptador = new AdaptadorPersonalizado(ListaMascotaActivity.this,listaMascota);
-                recyclerMascota.setAdapter(adaptador);
-                recyclerMascota.setLayoutManager(new LinearLayoutManager(ListaMascotaActivity.this));
-                filtrar(userID);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
     }
 
     private void filtrar(String id){
