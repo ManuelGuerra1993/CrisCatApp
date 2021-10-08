@@ -148,7 +148,7 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
                 map.put("raza", raza);
                 map.put("sexo", sexo);
                 map.put("anioNacimiento", anionacimiento);
-                map.put("propietario", propietario);
+                map.put("propietario", userID);
                 map.put("estado", estado);
                 dbReference.child("Mascota").child(id).updateChildren(map);
                 Toast.makeText(MantenedorMascotaActivity.this, "Mascota actualizada", Toast.LENGTH_SHORT).show();
