@@ -4,8 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CrisCatApp"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".DetalleMascotaActivity"
+            android:label="Detalle de tu mascota"
+            android:exported="false" />
         <activity
             android:name=".MapaCrisCatActivity"
             android:exported="true" />
@@ -68,7 +72,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key"></meta-data>
+            android:value="@string/google_maps_key" />
 
         <service
             android:name=".MyFirebaseMessagingService"

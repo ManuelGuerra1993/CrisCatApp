@@ -13,6 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.FirebaseApp;
@@ -81,6 +83,14 @@ public class AdaptadorPersonalizado extends RecyclerView.Adapter<AdaptadorPerson
                 ventana.create().show();
             }
         });
+
+        holder.btnDetalle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context,DetalleMascotaActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -91,13 +101,17 @@ public class AdaptadorPersonalizado extends RecyclerView.Adapter<AdaptadorPerson
     public class vistaHolder extends RecyclerView.ViewHolder{
         TextView filaNombre, filaAnioNacimiento;
         ImageButton btnEditar, btnEliminar;
+        CardView btnDetalle;
         public vistaHolder(@NonNull View itemView){
             super(itemView);
             filaNombre = itemView.findViewById(R.id.filaNombre);
             filaAnioNacimiento = itemView.findViewById(R.id.filaAnioNacimiento);
             btnEditar = itemView.findViewById(R.id.btnEditar);
             btnEliminar = itemView.findViewById(R.id.btnEliminar);
+            btnDetalle = itemView.findViewById(R.id.btnDetalleMascota);
         }
+
+
     }
 
 }

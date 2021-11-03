@@ -131,8 +131,8 @@ public class Home extends AppCompatActivity {
                 } else {
                     btn_contact.setVisibility(View.VISIBLE);
                     btn_fares.setVisibility(View.VISIBLE);
-                    btn_dates.setVisibility(View.INVISIBLE);
-                    btn_pet.setVisibility(View.INVISIBLE);
+                    btn_dates.setVisibility(View.VISIBLE);
+                    btn_pet.setVisibility(View.VISIBLE);
                 }
             }
 
