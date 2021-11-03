@@ -48,7 +48,7 @@ public class CitasActivity extends AppCompatActivity {
     DatabaseReference dbReference;
 
     String fecha, horario, doctor, notas;
-    private int dia, mes, anio, hora, minutos;
+    private int dia, mes, anio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,29 +63,6 @@ public class CitasActivity extends AppCompatActivity {
         Fecha.setInputType(InputType.TYPE_NULL);
         Notas = findViewById(R.id.txtNotas);
         btnGuardar = findViewById(R.id.btnRegistrarCita);
-
-        //mDatabase = FirebaseDatabase.getInstance().getReference();
-
-        /*Fecha.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.N)
-            @Override
-            public void onClick(View view) {
-                final Calendar c = Calendar.getInstance();
-                dia = c.get(Calendar.DAY_OF_MONTH);
-                mes = c.get(Calendar.MONTH);
-                anio = c.get(Calendar.YEAR);
-
-                DatePickerDialog datePickerDialog = new DatePickerDialog(CitasActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                        Fecha.setText(day+"/"+(month+1)+"/"+year);
-                    }
-                }
-                ,dia,mes,anio);
-                datePickerDialog.show();
-            }
-        });*/
-
 
         loadDoctor();
 
