@@ -198,22 +198,6 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
                 }
             }
         };
-
-        dbReference.child("Mascota").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()){
-                    //String ido = snapshot.child("raza").getValue().toString();
-                    //txtPropietario.setText(userID);
-                    //Log.d("TAG","uid" +ido);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
     }
 
     public void showData(DataSnapshot dataSnapshot){

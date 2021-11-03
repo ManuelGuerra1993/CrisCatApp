@@ -88,6 +88,14 @@ public class AdaptadorPersonalizado extends RecyclerView.Adapter<AdaptadorPerson
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context,DetalleMascotaActivity.class);
+                intent.putExtra("id", listaMascota.get(position).getId()+"");
+                intent.putExtra("nombre",listaMascota.get(position).getNombre()+"");
+                intent.putExtra("especie",listaMascota.get(position).getEspecie()+"");
+                intent.putExtra("raza",listaMascota.get(position).getRaza()+"");
+                intent.putExtra("sexo",listaMascota.get(position).getSexo()+"");
+                intent.putExtra("anioNacimiento",listaMascota.get(position).getAnioNacimiento()+"");
+                intent.putExtra("propietario",listaMascota.get(position).getPropietario()+"");
+                intent.putExtra("estado",listaMascota.get(position).getEstado()+"");
                 context.startActivity(intent);
             }
         });
