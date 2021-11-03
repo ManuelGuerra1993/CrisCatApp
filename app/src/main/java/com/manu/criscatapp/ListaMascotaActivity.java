@@ -76,16 +76,13 @@ public class ListaMascotaActivity extends AppCompatActivity {
                             Mascota m = item.getValue(Mascota.class);
                             listaMascota.add(m);
                         }
-                        //adaptador = new ArrayAdapter<Mascota>(ListaMascotaActivity.this, android.R.layout.simple_list_item_1,listaMascota);
-                        //lstMascota.setAdapter(adaptador);
-                        if (nombre.equals("manu99")) {
+
                         adaptador = new AdaptadorPersonalizado(ListaMascotaActivity.this, listaMascota);
                         recyclerMascota.setAdapter(adaptador);
                         recyclerMascota.setLayoutManager(new LinearLayoutManager(ListaMascotaActivity.this));
+                        if (nombre.equals("manu99")){
+                            Log.d("TAG","Tipo de usuario: administrador " +nombre);
                         } else {
-                            adaptador = new AdaptadorPersonalizado(ListaMascotaActivity.this, listaMascota);
-                            recyclerMascota.setAdapter(adaptador);
-                            recyclerMascota.setLayoutManager(new LinearLayoutManager(ListaMascotaActivity.this));
                             filtrar(userID);
                         }
                     }
