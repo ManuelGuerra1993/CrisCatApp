@@ -56,7 +56,7 @@ public class AdaptadorPersonalizado extends RecyclerView.Adapter<AdaptadorPerson
                 intent.putExtra("raza",listaMascota.get(position).getRaza()+"");
                 intent.putExtra("sexo",listaMascota.get(position).getSexo()+"");
                 intent.putExtra("anioNacimiento",listaMascota.get(position).getAnioNacimiento()+"");
-                intent.putExtra("propietario",listaMascota.get(position).getPropietario()+"");
+                //intent.putExtra("propietario",listaMascota.get(position).getPropietario()+"");
                 intent.putExtra("estado",listaMascota.get(position).getEstado()+"");
                 context.startActivity(intent);
             }
@@ -94,7 +94,7 @@ public class AdaptadorPersonalizado extends RecyclerView.Adapter<AdaptadorPerson
                 intent.putExtra("raza",listaMascota.get(position).getRaza()+"");
                 intent.putExtra("sexo",listaMascota.get(position).getSexo()+"");
                 intent.putExtra("anioNacimiento",listaMascota.get(position).getAnioNacimiento()+"");
-                intent.putExtra("propietario",listaMascota.get(position).getPropietario()+"");
+                //intent.putExtra("propietario",listaMascota.get(position).getPropietario()+"");
                 intent.putExtra("estado",listaMascota.get(position).getEstado()+"");
                 context.startActivity(intent);
             }

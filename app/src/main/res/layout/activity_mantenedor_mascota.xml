@@ -100,20 +100,21 @@
 
     <EditText
         android:id="@+id/txtRaza"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/design_input"
-        android:ems="10"
-        android:hint="Ingrese raza"
-        android:padding="10dp"
         android:drawableStart="@drawable/ic_forma_de_pata_negra"
         android:drawablePadding="10dp"
-        android:textSize="14sp"
+        android:ems="10"
+        android:hint="Ingrese raza"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblraza" />
+        android:padding="10dp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/lblraza"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <TextView
         android:id="@+id/lblSexo"
@@ -164,54 +165,30 @@
         android:id="@+id/lblanionacimiento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:text="Año de nacimiento: "
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtRaza" />
 
     <EditText
         android:id="@+id/txtanionacimiento"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:padding="10dp"
-        android:ems="10"
-        android:inputType="number"
-        android:minHeight="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/design_input"
         android:drawableStart="@drawable/ic_fecha"
         android:drawablePadding="10dp"
+        android:ems="10"
         android:hint="Ingrese el año de nacimiento de la mascota"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblanionacimiento"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Propietario: "
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtanionacimiento" />
-
-    <EditText
-        android:id="@+id/txtPropietario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/design_input"
-        android:layout_marginTop="8dp"
-        android:drawableStart="@drawable/ic_hombre_peinando_a_un_perro"
-        android:drawablePadding="10dp"
+        android:inputType="number"
+        android:maxLength="4"
+        android:minHeight="48dp"
         android:padding="10dp"
         android:textSize="14sp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:hint="Ingrese Nombre del propietario"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/txtanionacimiento" />
+        app:layout_constraintStart_toEndOf="@+id/lblanionacimiento"
+        app:layout_constraintTop_toBottomOf="@+id/txtRaza"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textView9"
@@ -220,7 +197,7 @@
         android:layout_marginTop="24dp"
         android:text="Estado: "
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPropietario" />
+        app:layout_constraintTop_toBottomOf="@+id/txtanionacimiento" />
 
     <EditText
         android:id="@+id/txtEstado"
@@ -229,18 +206,18 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/design_input"
-        android:textSize="14sp"
-        android:ems="10"
-        android:inputType="none"
-        android:focusable="false"
-        android:textIsSelectable="false"
-        android:minHeight="48dp"
-        android:text="Vigente"
         android:drawableStart="@drawable/ic_mascota_amigable"
         android:drawablePadding="10dp"
+        android:ems="10"
+        android:focusable="false"
+        android:inputType="none"
+        android:minHeight="48dp"
         android:padding="10dp"
+        android:text="Vigente"
+        android:textIsSelectable="false"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/txtPropietario" />
+        app:layout_constraintTop_toBottomOf="@+id/txtanionacimiento" />
 
     <Button
         android:id="@+id/btnRegistrar"

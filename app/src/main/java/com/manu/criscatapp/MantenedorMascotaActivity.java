@@ -76,7 +76,7 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
                 rbHembra.setChecked(true);
             }
             txtanioNacimiento.setText(getIntent().getStringExtra("anioNacimiento"));
-            txtPropietario.setText(getIntent().getStringExtra("propietario"));
+            //txtPropietario.setText(getIntent().getStringExtra("propietario"));
             txtEstado.setText(getIntent().getStringExtra("estado"));
             lblTitulo = findViewById(R.id.lblTitulo);
             lblTitulo.setText("ACTUALIZA LA INFORMACIÓN DE TU MASCOTA");
@@ -88,7 +88,7 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
         txtNombre = findViewById(R.id.txtNombreMascota);
         txtRaza = findViewById(R.id.txtRaza);
         txtanioNacimiento = findViewById(R.id.txtanionacimiento);
-        txtPropietario = findViewById(R.id.txtPropietario);
+        //txtPropietario = findViewById(R.id.txtPropietario);
         txtEstado = findViewById(R.id.txtEstado);
         rbCanino = findViewById(R.id.rbCanino);
         rbFelino = findViewById(R.id.rbFelino);
@@ -106,7 +106,7 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
     private void registrar(){
         nombres = txtNombre.getText().toString();
         raza = txtRaza.getText().toString();
-        propietario = txtPropietario.getText().toString();
+        //propietario = txtPropietario.getText().toString();
         estado = txtEstado.getText().toString();
         if (txtanioNacimiento.getText().toString().equals("")){
             anionacimiento = 0;
@@ -149,7 +149,7 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
                 map.put("raza", raza);
                 map.put("sexo", sexo);
                 map.put("anioNacimiento", anionacimiento);
-                map.put("propietario", propietario);
+                //map.put("propietario", propietario);
                 map.put("estado", estado);
                 dbReference.child("Mascota").child(id).updateChildren(map);
                 Toast.makeText(MantenedorMascotaActivity.this, "Mascota actualizada", Toast.LENGTH_SHORT).show();
