@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "541155482463-f3jrejfaiqrhblgeo7hn5u6ogemp37f5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.manu.criscatapp",
+            "certificate_hash": "797f82ae52c62ff9c8701610d3def0e46ee54f38"
+          }
+        },
+        {
           "client_id": "541155482463-o2apk5fsu5t3llpj2frthqm60vqto7vg.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

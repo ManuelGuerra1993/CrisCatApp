@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -233,5 +234,11 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
         if (mAuthListener != null){
             mAuth.removeAuthStateListener(mAuthListener);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(MantenedorMascotaActivity.this,ListaMascotaActivity.class);
+        startActivity(intent);
     }
 }
