@@ -112,6 +112,8 @@
         android:minHeight="48dp"
         android:padding="10dp"
         android:hint="Ingrese la fecha"
+        android:onClick="abrirCalendario"
+        android:maxLength="10"
         android:drawableStart="@drawable/ic_fecha"
         android:drawablePadding="10dp"
         android:background="@drawable/design_input"

@@ -1,14 +1,19 @@
 package com.manu.criscatapp;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -25,8 +30,10 @@ import com.manu.criscatapp.modelo.Doctor;
 import com.manu.criscatapp.modelo.Horario;
 import com.manu.criscatapp.modelo.Mascota;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.UUID;
 
@@ -41,30 +48,53 @@ public class CitasActivity extends AppCompatActivity {
     DatabaseReference dbReference;
 
     String fecha, horario, doctor, notas;
+    private int dia, mes, anio, hora, minutos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_citas);
         inicializarFirebase();
-
         cboHorario = findViewById(R.id.cboHorario);
         cboDoctor = findViewById(R.id.cboDoctor);
         Fecha = findViewById(R.id.txtFecha);
+        Fecha.setFocusable(true);
+        Fecha.setFocusableInTouchMode(true);
+        Fecha.setInputType(InputType.TYPE_NULL);
         Notas = findViewById(R.id.txtNotas);
         btnGuardar = findViewById(R.id.btnRegistrarCita);
 
         //mDatabase = FirebaseDatabase.getInstance().getReference();
 
+        /*Fecha.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onClick(View view) {
+                final Calendar c = Calendar.getInstance();
+                dia = c.get(Calendar.DAY_OF_MONTH);
+                mes = c.get(Calendar.MONTH);
+                anio = c.get(Calendar.YEAR);
+
+                DatePickerDialog datePickerDialog = new DatePickerDialog(CitasActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        Fecha.setText(day+"/"+(month+1)+"/"+year);
+                    }
+                }
+                ,dia,mes,anio);
+                datePickerDialog.show();
+            }
+        });*/
+
+
         loadDoctor();
+
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 registro();
             }
         });
-
-
     }
 
     public void loadDoctor(){
@@ -120,6 +150,11 @@ public class CitasActivity extends AppCompatActivity {
             Fecha.setError("La fecha es obligatoria");
             retorno = false;
         }
+        if (validarFecha()==false){
+            Fecha.setError("Formato incorrecto");
+            retorno = false;
+        }
+
         if (notas.isEmpty()){
             Notas.setError("Ingrese las notas");
             retorno = false;
@@ -127,9 +162,43 @@ public class CitasActivity extends AppCompatActivity {
         return retorno;
     }
 
+    public boolean validarFecha() {
+        boolean correcto = false;
+
+        try {
+            //Formato de fecha (día/mes/año)
+            SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+            formatoFecha.setLenient(false);
+            //Comprobación de la fecha
+            formatoFecha.parse(this.dia + "/" + this.mes + "/" + this.anio);
+            correcto = true;
+        } catch (ParseException e) {
+            //Si la fecha no es correcta, pasará por aquí
+            correcto = false;
+        }
+
+        return correcto;
+    }
+
     private void inicializarFirebase(){
         FirebaseApp.initializeApp(this);
         fbDataBase = FirebaseDatabase.getInstance();
         dbReference = fbDataBase.getReference();
+    }
+
+    public void abrirCalendario(View view) {
+        Calendar cal = Calendar.getInstance();
+        dia = cal.get(Calendar.DAY_OF_MONTH);
+        mes = cal.get(Calendar.MONTH);
+        anio = cal.get(Calendar.YEAR);
+
+        DatePickerDialog dialog = new DatePickerDialog(CitasActivity.this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                String fecha = day+"/"+(month+1)+"/"+year;
+                Fecha.setText(fecha);
+            }
+        },dia,mes,anio);
+        dialog.show();
     }
 }
