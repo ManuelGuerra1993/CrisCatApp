@@ -2,6 +2,7 @@ package com.manu.criscatapp.modelo;
 
 public class Mascota {
     private String id;
+    private String imageURL;
     private String nombre;
     private int especie;
     private String raza;
@@ -13,6 +14,7 @@ public class Mascota {
     @Override
     public String toString() {
         return "nombre='" + nombre + '\'' +
+                ", imageURL=" + imageURL + '\'' +
                 ", especie=" + especie +
                 ", raza='" + raza + '\'' +
                 ", sexo=" + sexo +
@@ -24,8 +26,28 @@ public class Mascota {
     public Mascota() {
     }
 
+    public Mascota(String id, String imageURL, String nombre, int especie, String raza, int sexo, int anioNacimiento, String propietario, String estado) {
+        this.id = id;
+        this.imageURL = imageURL;
+        this.nombre = nombre;
+        this.especie = especie;
+        this.raza = raza;
+        this.sexo = sexo;
+        this.anioNacimiento = anioNacimiento;
+        this.propietario = propietario;
+        this.estado = estado;
+    }
+
     public Mascota(String propietario) {
         this.propietario = propietario;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 
     public String getId() {

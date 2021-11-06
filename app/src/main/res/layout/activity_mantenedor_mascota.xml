@@ -5,232 +5,262 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/registromacota"
-    tools:context=".MantenedorMascotaActivity"
-    android:padding="20dp">
+    tools:context=".MantenedorMascotaActivity">
 
     <TextView
         android:id="@+id/lblTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="REGISTRA TU MASCOTA"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/lblNombreMascota"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Nombre: "
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblTitulo" />
-
-    <EditText
-        android:id="@+id/txtNombreMascota"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:paddingStart="10dp"
-        android:drawableStart="@drawable/ic_mascotas"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textSize="14sp"
-        android:background="@drawable/design_input"
-        android:hint="Ingrese Nombre"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblNombreMascota" />
-
-    <TextView
-        android:id="@+id/lblEspecie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Especie: "
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="122dp"
-        android:layout_height="76dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/lblraza"
-        app:layout_constraintStart_toEndOf="@+id/lblEspecie"
-        app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota">
-
-        <RadioButton
-            android:id="@+id/rbCanino"
-            android:layout_width="wrap_content"
-            android:layout_height="28dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:checked="true"
-            android:minHeight="48dp"
-            android:text="Canino"
-            app:layout_constraintStart_toEndOf="@+id/lblEspecie"
-            app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <RadioButton
-            android:id="@+id/rbFelino"
-            android:layout_width="wrap_content"
-            android:layout_height="28dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:minHeight="48dp"
-            android:text="Felino"
-            app:layout_constraintStart_toEndOf="@+id/rbCanino"
-            app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota"
-            tools:ignore="TouchTargetSizeCheck" />
-
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/lblraza"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Raza: "
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblEspecie" />
-
-    <EditText
-        android:id="@+id/txtRaza"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/design_input"
-        android:drawableStart="@drawable/ic_forma_de_pata_negra"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:hint="Ingrese raza"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:padding="10dp"
-        android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/lblraza"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-    <TextView
-        android:id="@+id/lblSexo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="50dp"
-        android:text="Sexo: "
-        app:layout_constraintStart_toEndOf="@+id/radioGroup"
-        app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota" />
-
-    <RadioGroup
-        android:layout_width="122dp"
-        android:layout_height="76dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/lblraza"
-        app:layout_constraintStart_toEndOf="@+id/lblSexo"
-        app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota">
-
-        <RadioButton
-            android:id="@+id/rbMacho"
-            android:layout_width="wrap_content"
-            android:layout_height="28dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:checked="true"
-            android:minHeight="48dp"
-            android:text="Macho"
-            app:layout_constraintStart_toEndOf="@+id/lblSexo"
-            tools:ignore="TouchTargetSizeCheck"
-            tools:layout_editor_absoluteY="111dp" />
-
-        <RadioButton
-            android:id="@+id/rbHembra"
-            android:layout_width="wrap_content"
-            android:layout_height="28dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:minHeight="48dp"
-            android:text="Hembra"
-            tools:ignore="TouchTargetSizeCheck"
-            tools:layout_editor_absoluteX="250dp"
-            tools:layout_editor_absoluteY="166dp" />
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/lblanionacimiento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Año de nacimiento: "
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtRaza" />
-
-    <EditText
-        android:id="@+id/txtanionacimiento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/design_input"
-        android:drawableStart="@drawable/ic_fecha"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:hint="Ingrese el año de nacimiento de la mascota"
-        android:inputType="number"
-        android:maxLength="4"
-        android:minHeight="48dp"
-        android:padding="10dp"
-        android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/lblanionacimiento"
-        app:layout_constraintTop_toBottomOf="@+id/txtRaza"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Estado: "
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtanionacimiento" />
-
-    <EditText
-        android:id="@+id/txtEstado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/design_input"
-        android:drawableStart="@drawable/ic_mascota_amigable"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:focusable="false"
-        android:inputType="none"
-        android:minHeight="48dp"
-        android:padding="10dp"
-        android:text="Vigente"
-        android:textIsSelectable="false"
-        android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/txtanionacimiento" />
-
-    <Button
-        android:id="@+id/btnRegistrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginTop="16dp"
-        android:text="Registrar"
-        android:padding="10dp"
-        android:background="@drawable/design_actionbuttons"
-        android:textColor="@color/white"
+        android:padding="15dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEstado" />
+        app:layout_constraintTop_toBottomOf="@+id/lblTitulo"
+        app:layout_constraintVertical_bias="0.0">
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="568dp">
+
+                <TextView
+                    android:id="@+id/lblNombreMascota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Nombre: "
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnFoto" />
+
+                <EditText
+                    android:id="@+id/txtNombreMascota"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/design_input"
+                    android:drawableStart="@drawable/ic_mascotas"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:hint="Ingrese Nombre"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:paddingStart="10dp"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblNombreMascota" />
+
+                <TextView
+                    android:id="@+id/lblEspecie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Especie: "
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota" />
+
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="122dp"
+                    android:layout_height="76dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toTopOf="@+id/lblraza"
+                    app:layout_constraintStart_toEndOf="@+id/lblEspecie"
+                    app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota">
+
+                    <RadioButton
+                        android:id="@+id/rbCanino"
+                        android:layout_width="wrap_content"
+                        android:layout_height="28dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:checked="true"
+                        android:minHeight="48dp"
+                        android:text="Canino"
+                        app:layout_constraintStart_toEndOf="@+id/lblEspecie"
+                        app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <RadioButton
+                        android:id="@+id/rbFelino"
+                        android:layout_width="wrap_content"
+                        android:layout_height="28dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:minHeight="48dp"
+                        android:text="Felino"
+                        app:layout_constraintStart_toEndOf="@+id/rbCanino"
+                        app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/lblraza"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:text="Raza: "
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblEspecie" />
+
+                <EditText
+                    android:id="@+id/txtRaza"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/design_input"
+                    android:drawableStart="@drawable/ic_forma_de_pata_negra"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:hint="Ingrese raza"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/lblraza"
+                    app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+                <TextView
+                    android:id="@+id/lblSexo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="50dp"
+                    android:text="Sexo: "
+                    app:layout_constraintStart_toEndOf="@+id/radioGroup"
+                    app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota" />
+
+                <RadioGroup
+                    android:layout_width="122dp"
+                    android:layout_height="76dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toTopOf="@+id/lblraza"
+                    app:layout_constraintStart_toEndOf="@+id/lblSexo"
+                    app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota">
+
+                    <RadioButton
+                        android:id="@+id/rbMacho"
+                        android:layout_width="wrap_content"
+                        android:layout_height="28dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:checked="true"
+                        android:minHeight="48dp"
+                        android:text="Macho"
+                        app:layout_constraintStart_toEndOf="@+id/lblSexo"
+                        tools:ignore="TouchTargetSizeCheck"
+                        tools:layout_editor_absoluteY="111dp" />
+
+                    <RadioButton
+                        android:id="@+id/rbHembra"
+                        android:layout_width="wrap_content"
+                        android:layout_height="28dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:minHeight="48dp"
+                        android:text="Hembra"
+                        tools:ignore="TouchTargetSizeCheck"
+                        tools:layout_editor_absoluteX="250dp"
+                        tools:layout_editor_absoluteY="166dp" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/lblanionacimiento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="Año de nacimiento: "
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtRaza" />
+
+                <EditText
+                    android:id="@+id/txtanionacimiento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/design_input"
+                    android:drawableStart="@drawable/ic_fecha"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:hint="Ingrese el año de nacimiento de la mascota"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:minHeight="48dp"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/lblanionacimiento"
+                    app:layout_constraintTop_toBottomOf="@+id/txtRaza"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="Estado: "
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtanionacimiento" />
+
+                <EditText
+                    android:id="@+id/txtEstado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/design_input"
+                    android:drawableStart="@drawable/ic_mascota_amigable"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:inputType="none"
+                    android:minHeight="48dp"
+                    android:padding="10dp"
+                    android:text="Vigente"
+                    android:textIsSelectable="false"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/textView9"
+                    app:layout_constraintTop_toBottomOf="@+id/txtanionacimiento" />
+
+                <Button
+                    android:id="@+id/btnRegistrar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/design_actionbuttons"
+                    android:padding="10dp"
+                    android:text="Registrar"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtEstado" />
+
+                <ImageView
+                    android:id="@+id/btnFoto"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_mascotas" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

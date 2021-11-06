@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -101,7 +102,10 @@ public class LoginActivity extends AppCompatActivity {
         if (TextUtils.isEmpty(mail)){
             txtMail.setError("Ingrese un correo");
             txtMail.requestFocus();
-        }else if (TextUtils.isEmpty(passwaord)){
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(mail).matches()){
+            txtMail.setError("Correo inválido o no existe");
+            txtMail.setFocusable(true);
+        } else if (TextUtils.isEmpty(passwaord)){
             Toast.makeText(LoginActivity.this, "Ingrese una Contraseña", Toast.LENGTH_SHORT).show();
             txtPasswaord.requestFocus();
         }else{
@@ -111,7 +115,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (task.isSuccessful()){
                         Toast.makeText(LoginActivity.this, "Bienvenido", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(LoginActivity.this,EmpezarActivity.class));
-                    }else {
+                    } else {
                         Log.w("TAG","Error:",task.getException());
                     }
                 }
