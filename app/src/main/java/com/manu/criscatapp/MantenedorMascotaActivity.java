@@ -11,6 +11,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
@@ -65,6 +66,9 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
     int anionacimiento, especie, sexo;
 
     Boolean registrar = true;
+
+    private static final long TIEMPO_MINIMO= 5000; // Minimo de espera para click
+    private long ultimoClick= 0; // Fecha del Ultimo click capturad
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,6 +128,8 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                controlDobleClick();
+                //btnGuardar.setEnabled(false);
                 registrar();
             }
         });
@@ -192,9 +198,15 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
        // }
     }
 
+    private void controlDobleClick(){
+        if (SystemClock.elapsedRealtime() - ultimoClick < TIEMPO_MINIMO){
+            return;
+        }
+        ultimoClick= SystemClock.elapsedRealtime();
+    }
+
     private void registrar(){
         nombres = txtNombre.getText().toString();
-
         raza = txtRaza.getText().toString();
         //propietario = txtPropietario.getText().toString();
         estado = txtEstado.getText().toString();
@@ -216,7 +228,7 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
 
         if (registrar == true) {
             if (validarCampos()==true) {
-
+                btnGuardar.setEnabled(false);
                 //imgFoto.setImageBitmap(photo);
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
                 photo.compress(Bitmap.CompressFormat.PNG, 100, stream);
@@ -246,6 +258,7 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
                         mascota.setAnioNacimiento(anionacimiento);
                         mascota.setEspecie(especie);
                         mascota.setSexo(sexo);
+                        btnGuardar.setEnabled(false);
                         dbReference.child("Mascota").child(mascota.getId()).setValue(mascota);
                         Toast.makeText(this, "Mascota registrada", Toast.LENGTH_SHORT).show();
 
@@ -258,6 +271,7 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
                     }
                     //progressBar.setVisibility(View.GONE);
                 });
+
 
 
 
@@ -332,6 +346,10 @@ public class MantenedorMascotaActivity extends AppCompatActivity {
         }
         if (anionacimiento == 0){
             txtanioNacimiento.setError("Es importante saber el Año de nacimiento");
+            retorno = false;
+        }
+        if (photo == null ){
+            Toast.makeText(MantenedorMascotaActivity.this, "Tome una foto de su mascota", Toast.LENGTH_SHORT).show();
             retorno = false;
         }
         /*if (propietario.isEmpty()){

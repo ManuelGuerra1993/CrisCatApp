@@ -91,6 +91,7 @@ public class AdaptadorPersonalizado extends RecyclerView.Adapter<AdaptadorPerson
                 Intent intent = new Intent(context,DetalleMascotaActivity.class);
                 intent.putExtra("id", listaMascota.get(position).getId()+"");
                 intent.putExtra("nombre",listaMascota.get(position).getNombre()+"");
+                intent.putExtra("imageURL",listaMascota.get(position).getImageURL()+"");
                 intent.putExtra("especie",listaMascota.get(position).getEspecie()+"");
                 intent.putExtra("raza",listaMascota.get(position).getRaza()+"");
                 intent.putExtra("sexo",listaMascota.get(position).getSexo()+"");
